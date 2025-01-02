@@ -11,6 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        primarybtn: "var(--primarybtn)",
+        btntext: "var(--btntext)",
+      },
+      fontFamily: {
+        prosto: ["Prosto One", "cursive"],
       },
     },
   },

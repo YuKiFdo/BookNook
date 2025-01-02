@@ -29,15 +29,12 @@ public class BookService {
         ResponseEntity<GoogleBooksResponse> response = restTemplate.getForEntity(url, GoogleBooksResponse.class);
         GoogleBooksResponse booksResponse = response.getBody();
 
-        String jsonresponse = restTemplate.getForObject(url, String.class);
-        System.out.println(jsonresponse);
-
         List<Book> books = new ArrayList<>();
         if (booksResponse != null && booksResponse.getItems() != null) {
             for (GoogleBooksResponse.Item item : booksResponse.getItems()) {
                 GoogleBooksResponse.VolumeInfo volumeInfo = item.getVolumeInfo();
 
-                System.out.println(volumeInfo.getAverageRating());
+
                 Book book = new Book();
                 book.setId(item.getId());
                 book.setTitle(volumeInfo.getTitle());
